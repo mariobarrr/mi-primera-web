@@ -18,7 +18,7 @@
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"react-email": "^5.2.10",
-		"resend": "^6.9.4",
+		"resend": "^6.10.0",
 		"use-intl": "catalog:"
 	},
 	"devDependencies": {
