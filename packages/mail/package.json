@@ -8,8 +8,8 @@
 		"type-check": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@react-email/components": "^1.0.10",
-		"@react-email/render": "^2.0.4",
+		"@react-email/components": "^1.0.11",
+		"@react-email/render": "^2.0.5",
 		"@repo/i18n": "workspace:*",
 		"@repo/logs": "workspace:*",
 		"@repo/ui": "workspace:*",
@@ -18,7 +18,7 @@
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"react-email": "^5.2.10",
-		"resend": "^6.9.4",
+		"resend": "^6.10.0",
 		"use-intl": "catalog:"
 	},
 	"devDependencies": {
