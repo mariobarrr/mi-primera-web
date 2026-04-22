@@ -30,8 +30,10 @@ import { UserMenu } from "@shared/components/UserMenu";
 import {
 	BotMessageSquareIcon,
 	ChevronRightIcon,
+	GitBranchIcon,
 	HomeIcon,
 	MenuIcon,
+	NotebookIcon,
 	PanelLeftCloseIcon,
 	PanelLeftOpenIcon,
 	SettingsIcon,
@@ -349,6 +351,18 @@ export function NavBar() {
 				href: "/chatbot",
 				icon: BotMessageSquareIcon,
 				isActive: pathname.startsWith("/chatbot"),
+			},
+			{
+				label: "Mis notas",
+				href: "/dashboard/mis-notas",
+				icon: NotebookIcon,
+				isActive: pathname.startsWith("/dashboard/mis-notas"),
+			},
+			{
+				label: "GitHub",
+				href: "/github",
+				icon: GitBranchIcon,
+				isActive: pathname.startsWith("/github"),
 			},
 			...(organizationSubItems
 				? [
