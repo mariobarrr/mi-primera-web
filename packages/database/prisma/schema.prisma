@@ -42,6 +42,8 @@ model User {
   twofactors               TwoFactor[]
   notifications            Notification[]
   notificationPreferences  UserNotificationPreference[]
+  notes                    Note[]
+  favoriteRepos            FavoriteRepo[]
 
   @@unique([email])
   @@unique([username])
@@ -242,4 +244,31 @@ model UserNotificationPreference {
 
   @@unique([userId, type, target])
   @@map("user_notification_preference")
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?  @db.Text
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("note")
+}
+
+model FavoriteRepo {
+  id       String @id @default(cuid())
+  repoId   String
+  repoName String
+  repoUrl  String
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, repoId])
+  @@index([userId])
+  @@map("favorite_repo")
 }

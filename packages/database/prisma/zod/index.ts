@@ -82,6 +82,18 @@ export const UserNotificationPreferenceScalarFieldEnumSchema = z.enum(['id', 'us
 
 export type UserNotificationPreferenceScalarFieldEnum = z.infer<typeof UserNotificationPreferenceScalarFieldEnumSchema>;
 
+// File: NoteScalarFieldEnum.schema.ts
+
+export const NoteScalarFieldEnumSchema = z.enum(['id', 'title', 'content', 'userId', 'createdAt', 'updatedAt'])
+
+export type NoteScalarFieldEnum = z.infer<typeof NoteScalarFieldEnumSchema>;
+
+// File: FavoriteRepoScalarFieldEnum.schema.ts
+
+export const FavoriteRepoScalarFieldEnumSchema = z.enum(['id', 'repoId', 'repoName', 'repoUrl', 'userId', 'createdAt'])
+
+export type FavoriteRepoScalarFieldEnum = z.infer<typeof FavoriteRepoScalarFieldEnumSchema>;
+
 // File: SortOrder.schema.ts
 
 export const SortOrderSchema = z.enum(['asc', 'desc'])
@@ -328,4 +340,32 @@ export const UserNotificationPreferenceSchema = z.object({
 });
 
 export type UserNotificationPreferenceType = z.infer<typeof UserNotificationPreferenceSchema>;
+
+
+// File: Note.schema.ts
+
+export const NoteSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  content: z.string().nullish(),
+  userId: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+});
+
+export type NoteType = z.infer<typeof NoteSchema>;
+
+
+// File: FavoriteRepo.schema.ts
+
+export const FavoriteRepoSchema = z.object({
+  id: z.string(),
+  repoId: z.string(),
+  repoName: z.string(),
+  repoUrl: z.string(),
+  userId: z.string(),
+  createdAt: z.date(),
+});
+
+export type FavoriteRepoType = z.infer<typeof FavoriteRepoSchema>;
 
