@@ -30,6 +30,10 @@ export function HeroSection() {
 					{t("home.hero.title")}
 				</h1>
 
+				<h2 className="mt-3 font-semibold text-xl md:text-2xl max-w-2xl mx-auto text-balance text-foreground/80">
+					{t("home.hero.subtitle")}
+				</h2>
+
 				<p className="mt-2 text-sm sm:text-lg max-w-3xl mx-auto text-balance text-foreground/60">
 					{t("home.hero.subtitle")}
 				</p>

@@ -47,16 +47,16 @@ export default async function MarketingLayout({
 	return (
 		<html lang={locale} suppressHydrationWarning className={sansFont.variable}>
 			<body className={cn("min-h-screen bg-background text-foreground antialiased")}>
-				<ConsentProvider initialConsent={consentCookie?.value === "true"}>
-					<NextIntlClientProvider locale={locale} messages={messages}>
-						<ClientProviders>
-							<ThemeProvider
-								attribute="class"
-								disableTransitionOnChange
-								enableSystem
-								defaultTheme={config.defaultTheme}
-								themes={Array.from(config.enabledThemes)}
-							>
+				<ThemeProvider
+					attribute="class"
+					disableTransitionOnChange
+					enableSystem
+					defaultTheme={config.defaultTheme}
+					themes={Array.from(config.enabledThemes)}
+				>
+					<ConsentProvider initialConsent={consentCookie?.value === "true"}>
+						<NextIntlClientProvider locale={locale} messages={messages}>
+							<ClientProviders>
 								<NavBar />
 
 								<main className="min-h-screen">{children}</main>
@@ -65,10 +65,10 @@ export default async function MarketingLayout({
 
 								<ConsentBanner />
 								<AnalyticsScript />
-							</ThemeProvider>
-						</ClientProviders>
-					</NextIntlClientProvider>
-				</ConsentProvider>
+							</ClientProviders>
+						</NextIntlClientProvider>
+					</ConsentProvider>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

@@ -3,6 +3,8 @@
 import { cn } from "@repo/ui";
 import { CloudIcon, ComputerIcon, SmartphoneIcon, StarIcon, WandIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+import { FeatureCard } from "./FeatureCard";
 import Image from "next/image";
 import type { JSXElementConstructor, ReactNode } from "react";
 
@@ -208,6 +210,24 @@ export function FeaturesSection() {
 						);
 					})}
 				</div>
+			</div>
+
+			<div className="mt-8 lg:mt-12 container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<FeatureCard
+					icon="⚡"
+					title="Rápido por defecto"
+					description="Construido sobre Next.js App Router con React Server Components para el máximo rendimiento."
+				/>
+				<FeatureCard
+					icon="🔒"
+					title="Seguro desde el inicio"
+					description="Autenticación completa con Better Auth: contraseñas, magic links, passkeys y OAuth."
+				/>
+				<FeatureCard
+					icon="🌍"
+					title="Listo para escalar"
+					description="Arquitectura multi-tenant con organizaciones, roles y gestión de permisos integrada."
+				/>
 			</div>
 		</section>
 	);
