@@ -34,15 +34,15 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang={locale} suppressHydrationWarning className={sansFont.variable}>
 			<body className={cn("min-h-screen bg-background text-foreground antialiased")}>
-				<NuqsAdapter>
-					<NextIntlClientProvider messages={messages}>
-						<ThemeProvider
-							attribute="class"
-							disableTransitionOnChange
-							enableSystem
-							defaultTheme={config.defaultTheme}
-							themes={Array.from(config.enabledThemes)}
-						>
+				<ThemeProvider
+					attribute="class"
+					disableTransitionOnChange
+					enableSystem
+					defaultTheme={config.defaultTheme}
+					themes={Array.from(config.enabledThemes)}
+				>
+					<NuqsAdapter>
+						<NextIntlClientProvider messages={messages}>
 							<ApiClientProvider>
 								<ClientProviders>
 									{children}
@@ -50,9 +50,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 									<Toaster position="top-right" />
 								</ClientProviders>
 							</ApiClientProvider>
-						</ThemeProvider>
-					</NextIntlClientProvider>
-				</NuqsAdapter>
+						</NextIntlClientProvider>
+					</NuqsAdapter>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

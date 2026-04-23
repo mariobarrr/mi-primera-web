@@ -60,7 +60,7 @@ catalog:
     nanoid: ^5.1.7
     next: ^16.2.0
     next-intl: 4.8.3
-    next-themes: ^0.4.6
+    next-themes: ^0.4.8
     nprogress: ^0.2.0
     nuqs: ^2.8.9
     openai: ^6.33.0

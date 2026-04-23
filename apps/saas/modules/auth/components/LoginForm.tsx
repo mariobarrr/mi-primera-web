@@ -227,7 +227,7 @@ export function LoginForm() {
 							)}
 
 							<Button
-								className="w-full"
+								className="w-full rounded-none"
 								type="submit"
 								variant="primary"
 								loading={form.formState.isSubmitting}
@@ -235,6 +235,17 @@ export function LoginForm() {
 								{signinMode === "magic-link"
 									? t("auth.login.sendMagicLink")
 									: t("auth.login.submit")}
+							</Button>
+
+							<Button
+								className="w-full rounded-none"
+								type="button"
+								variant="primary"
+								asChild
+							>
+								<a href={config.marketingUrl ?? "/"}>
+									Continuar como invitado
+								</a>
 							</Button>
 						</form>
 					</Form>
