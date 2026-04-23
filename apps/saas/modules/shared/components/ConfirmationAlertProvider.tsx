@@ -50,7 +50,7 @@ export function ConfirmationAlertProvider({ children }: PropsWithChildren) {
 					<AlertDialogDescription>{confirmOptions?.message}</AlertDialogDescription>
 
 					<AlertDialogFooter>
-						<AlertDialogCancel>
+						<AlertDialogCancel className="border-foreground text-foreground">
 							{confirmOptions?.cancelLabel ?? t("common.confirmation.cancel")}
 						</AlertDialogCancel>
 						<Button

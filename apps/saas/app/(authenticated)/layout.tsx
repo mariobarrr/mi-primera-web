@@ -10,6 +10,7 @@ import { ConfirmationAlertProvider } from "@shared/components/ConfirmationAlertP
 import { orpc } from "@shared/lib/orpc-query-utils";
 import { getServerQueryClient } from "@shared/lib/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import type { PropsWithChildren } from "react";
 
@@ -20,7 +21,8 @@ export default async function AuthenticatedLayout({ children }: PropsWithChildre
 	const session = await getSession();
 
 	if (!session) {
-		redirect("/login");
+		const pathname = (await headers()).get("x-pathname") ?? "/";
+		redirect(`/login?redirectTo=${encodeURIComponent(pathname)}`);
 	}
 
 	const queryClient = getServerQueryClient();

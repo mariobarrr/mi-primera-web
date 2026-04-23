@@ -3,6 +3,7 @@ import { OrganizationsGrid } from "@organizations/components/OrganizationsGrid";
 import { config } from "@repo/auth/config";
 import { Card } from "@repo/ui";
 import { PageHeader } from "@shared/components/PageHeader";
+import { UserGreeting } from "@shared/components/UserGreeting";
 import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 
@@ -41,7 +42,7 @@ export default async function AppStartPage() {
 
 				<Card className="mt-6">
 					<div className="h-64 p-8 flex items-center justify-center text-foreground/60">
-						Place your content here...
+						<UserGreeting />
 					</div>
 				</Card>
 			</div>
