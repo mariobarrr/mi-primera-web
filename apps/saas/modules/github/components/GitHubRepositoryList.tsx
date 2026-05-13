@@ -92,12 +92,14 @@ export async function GitHubRepositoryList({ query }: { query: string }) {
 								</a>
 							</div>
 
-							<SaveRepoButton
-								repoId={String(repo.id)}
-								repoName={repo.full_name}
-								repoUrl={repo.html_url}
-								isFavorite={favoriteIds.has(String(repo.id))}
-							/>
+							{session && (
+								<SaveRepoButton
+									repoId={String(repo.id)}
+									repoName={repo.full_name}
+									repoUrl={repo.html_url}
+									isFavorite={favoriteIds.has(String(repo.id))}
+								/>
+							)}
 						</div>
 
 						{repo.description && (

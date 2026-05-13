@@ -237,6 +237,17 @@ export function LoginForm() {
 									: t("auth.login.submit")}
 							</Button>
 
+							<Button
+								className="w-full rounded-none"
+								type="button"
+								variant="outline"
+								asChild
+							>
+								<Link href="/explorar">
+									Continuar como invitado
+								</Link>
+							</Button>
+
 						</form>
 					</Form>
 
