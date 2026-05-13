@@ -238,12 +238,12 @@ export function LoginForm() {
 							</Button>
 
 							<Button
-								className="w-full rounded-none"
+								className="w-full rounded-none border-foreground text-foreground"
 								type="button"
 								variant="outline"
 								asChild
 							>
-								<Link href="/explorar">
+								<Link href="/bienvenida">
 									Continuar como invitado
 								</Link>
 							</Button>
